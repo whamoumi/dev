@@ -8,15 +8,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: app-one   
   template:
     metadata:
       labels:
-        app: my-app
+        app: app-one   
     spec:
       containers:
-      - name: my-app
-        image: wil42/playground:v1
+      - name: app-one   
+        image: wil42/playground:v2
         ports:
         - containerPort: 8888
 ---
@@ -26,7 +26,7 @@ metadata:
   name: app-one
 spec:
   selector:
-    app: app-one
+    app: app-one         
   ports:
     - protocol: TCP
       port: 8888
